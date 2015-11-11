@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Kancolle Bot's main
+*/
 package kancollebot;
 
 public class KancolleBot {
@@ -13,10 +10,14 @@ public class KancolleBot {
     public static void main(String[] args) throws Exception{
         
         ScreenCap screenCap = new ScreenCap();
+        ImageProc imageProc = new ImageProc();
+        
+        String fileName;
         
         System.out.println("Welcome to Kancolle-bot");
         
-        screenCap.capture();
+        fileName = screenCap.capture();
+        imageProc.show(fileName);
         
         System.out.println("end");
     }

@@ -19,7 +19,7 @@ public class ScreenCap {
         System.out.println("ScreenCap called");
     }
     
-    void capture() throws Exception{
+    String capture() throws Exception{
         
         String fileName;
         
@@ -31,6 +31,8 @@ public class ScreenCap {
         Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
         BufferedImage capture = new Robot().createScreenCapture(screenRect);
         ImageIO.write(capture, "bmp", new File(fileName+".bmp"));
+        
+        return fileName;
     }
     
 }
